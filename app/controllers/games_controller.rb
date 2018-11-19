@@ -37,13 +37,12 @@ class GamesController < ApplicationController
 
   def validity(api, valid_attempt, combination, grid_array)
     grid_to_string = grid_array.join(', ')
-    combination_upcase = combination.upcase
     if valid_attempt == false
-      return "Sorry but #{combination_upcase} can't be built out with #{grid_to_string}"
+      return "Sorry but #{combination.upcase} can't be built out with #{grid_to_string}"
     elsif api["found"] == false
-      return "Sorry but #{combination_upcase} does not seem to be a valid English word..."
+      return "Sorry but #{combination.upcase} does not seem to be a valid English word..."
     else
-      return "Congratulations! #{combination_upcase} is a valid English word!"
+      return "Congratulations! #{combination.upcase} is a valid English word!"
     end
   end
 end
